@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Publish product</h1>
+
+            <hr>
+
+            <form action="/publish" method="POST">
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input required type="text" class="form-control" id="name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="imagenUrl" class="form-label">Image</label>
+                    <input type="text" class="form-control" id="imagenUrl" name="imagenUrl">
+                </div>
+                <div class="mb-3">
+                    <label for="owner" class="form-label">Owner</label>
+                    <input type="text" class="form-control" id="owner" name="owner">
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location</label>
+                    <input type="text" class="form-control" id="location" name="location">
+                </div>                
+                <div class="mb-3">
+                    <label for="condition" class="form-label">Condition</label>
+                    <input type="text" class="form-control" id="condition" name="condition">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input type="text" class="form-control" id="description" name="description">
+                </div>
+                <div class="mb-3">
+                    <label for="dateListed" class="form-label">Date published</label>
+                    <input type="number" class="form-control" id="dateListed" name="dateListed">
+                </div>
+                <div class="mb-3">
+                    <label for="favourites" class="form-label">Favourites</label>
+                    <input type="number" class="form-control" id="favourites" name="favourites">
+                </div>                
+                <div class="mb-3">
+                    <label for="questions" class="form-label">Questions?</label>
+                    <input type="text" class="form-control" id="questions" name="questions">
+                </div>               
+
+                
+                <button type="submit" class="btn btn-dark">Publicate your product!</button>
+                <a href="/" class="btn btn-dark">Home</a>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
