@@ -7,4 +7,5 @@ router.get("/", (req, res, next) => {
 
 router.use("/", require("./auth.routes"));
 
+
 module.exports = router;
