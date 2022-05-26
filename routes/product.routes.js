@@ -4,7 +4,7 @@ const Product = require("../models/Product.model");
 router.get("/", async (req, res, next) => {
     try{
         const products = await Product.find();
-        res.render("products/product-list", { products });
+        res.render("views/index", { products });
     }catch (error){
         next(error);
     }
@@ -25,7 +25,7 @@ router.post ("/publish", async (req, res, next)=>{
             description,
             dateListed
         });
-        res.redirect("/products");
+        res.redirect("/profile");
     }catch(error){
         next (error);
     }
