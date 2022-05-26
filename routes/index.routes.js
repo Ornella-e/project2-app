@@ -6,6 +6,6 @@ router.get("/", (req, res, next) => {
 });
 
 router.use("/", require("./auth.routes"));
-
+router.use("/", require("./product.routes"));
 
 module.exports = router;
