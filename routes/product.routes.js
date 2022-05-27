@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
 
 router.get("/", async (req, res, next) => {
@@ -27,6 +28,62 @@ router.post ("/publish", async (req, res, next)=>{
         });
         res.redirect("/profile");
     }catch(error){
+        next (error);
+    }
+});
+
+router.get("/:id/edit", async (req, res, next)=>{
+try {
+    const {id} = req.params;
+    const product = await Product.findById(id);
+    res.render("product/product-edit", product);
+}catch (error){
+next(error);
+}
+});
+
+router.post("/:id/edit", async (req, res, next)=>{
+    try{
+        const {id}=req.params;
+        const {name, imageUrl, city, country, condition, description}=req.body;
+        await Product.findByIdAndUpdate(id,
+            {
+                name,
+                imageUrl,
+                location: {
+                    city,
+                    country
+                },
+                condition,
+                categorie,
+                description
+            },
+                {
+                    new: true
+                
+            });
+            res.redirect(`/product/${id}`);
+    }catch(error){
+        next(error);
+    }
+});
+
+router.post("/:id/delete", async (req, res, next)=>{
+    try{
+        const {id}=req.params;
+        await Product.findByIdAndDelete(id);
+        res.redirect("/profile")
+    }catch(error){
+        next(error);
+    }
+})
+
+router.get("/:id", async (req, res, next) => {
+    try{
+        const {id} = req.params;
+        const product = await Product.findById(id);
+        res.render ("product/product-details", product);
+    }catch (error){
         next (error);
     }
 })

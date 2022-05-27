@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>{{name}}</h1>
+  <hr>
+
+  <div class="row">
+    <div class="col-8">
+      <h3>Product Details</h3>
+       <img src="{{imageUrl}}" alt="author-img">
+      <p>{{username}}</p>
+      <p>Description: {{description}}</p>
+      <p>Condition: {{condition}}</p>
+      <p>City: {{location.city}}</p>
+      <p>Country: {{location.country}}</p>
+    </div>
+    <div class="col-4">
+        <label for="comments" class="form-label">Comments</label>
+        <input type="text" class="form-control" id="comments" name="comments">
+    </div>
+  </div>
+
+  <hr>
+  <a href="/">Home</a>
+
+</div>
