@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Edit my profile</h1>
+
+            <hr>
+
+            <form action="/profile/{{currentUser_id}}/edit" method="POST">
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input required type="text" class="form-control" id="username" name="username" value="{{username}}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input required type="password" class="form-control" id="password" name="password" value="{{password}}">
+                </div>
+                <div class="mb-3">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input required type="text" class="form-control" id="fullName" name="fullName" value="{{fullName}}">
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City</label>
+                    <input required type="text" class="form-control" id="city" name="city" value="{{location.city}}">
+                </div>       
+                 <div class="mb-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input required type="text" class="form-control" id="country" name="country" value="{{location.country}}">
+                </div>              
+                <button type="submit" class="btn btn-dark">Edit profile</button>
+                <a href="/" class="btn btn-dark">Cancell</a>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>
