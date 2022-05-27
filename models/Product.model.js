@@ -21,7 +21,7 @@ const productSchema = new Schema(
         favorites: Number, //?
         questions: [{
             type: Schema.Types.ObjectId,
-            ref: "Request"
+            ref: "Question"
         }]
     }
 );
