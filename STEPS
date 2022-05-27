@@ -1,5 +1,9 @@
 -Create User model.
 -Create Product model.
 -Create Request model.
+-Create Question model.
 Routes :
 -Auth Routes
+-Setup get on profile route.
+-Setup get on profile/edit route.
+-setup post on profile/edit route.
