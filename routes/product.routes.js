@@ -17,12 +17,13 @@ router.get("/publish", (req, res, next)=>{
 
 router.post ("/publish", async (req, res, next)=>{
     try{
-        const {name, imageUrl, city, country, condition, description, dateListed} = req.body;
+        const {name, imageUrl, city, country, condition, category, description, dateListed} = req.body;
         await Product.create({
             name,
             imageUrl,
             location:{city, country},
             condition,
+            category,
             description,
             dateListed
         });

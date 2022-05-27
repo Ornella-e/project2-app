@@ -1,11 +1,11 @@
 const { Schema, model } = require("mongoose");
 
-const requestSchema = new Schema({
+const questionSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: "User" },
-    comment: { type: String, maxlength: 200 },
+    question: { type: String, maxlength: 200 },
     product: {  type: Schema.Types.ObjectId, ref: "Product" }
   });
 
-  const Request = model("Request", requestSchema);
+  const Question = model("Question", questionSchema);
 
-module.exports = Request;
+module.exports = Question;
