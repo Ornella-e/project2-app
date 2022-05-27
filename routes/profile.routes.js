@@ -2,7 +2,7 @@ const User = require("../models/User.model");
 
 const router = require("express").Router();
 
-router.get("/profile/:id/edit", async (req, res, next) => {
+router.get("/:id/edit", async (req, res, next) => {
     try {
         const { id } = req.session.currentUser._id;
         const user = await User.findById(id);
@@ -12,7 +12,7 @@ router.get("/profile/:id/edit", async (req, res, next) => {
     }
 });
 
-router.post("/profile/:id/edit", async (req, res, next) => {
+router.post("/:id/edit", async (req, res, next) => {
     try {
         const { id } = req.session.currentUser._id;
         const { username, password, fullName, email, city, country } = req.body;
@@ -30,13 +30,13 @@ router.post("/profile/:id/edit", async (req, res, next) => {
             {
                 new: true
             });
-            res.redirect(`/profile/${id}`);
+            res.redirect(`/${id}`);
     } catch (error) {
         next(error);
     }
 });
 
-router.get("/profile/:id", async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
    // console.log('user id:', req.session.currentUser._id);
     try {
         const { id } = req.session.currentUser._id;
