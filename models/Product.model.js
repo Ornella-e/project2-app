@@ -15,7 +15,14 @@ const productSchema = new Schema(
             city: String,
             country: String
         },
-        condition: String,
+        condition:  {
+            type: String,
+            enum: ['New', 'Used']
+        },
+        category: {
+            type: String,
+            enum: ['Books and music', 'Clothes', 'Electronics', 'Furniture', 'Miscellaneous']
+        },
         description: String,
         dateListed: Date, //?date that was published
         favorites: Number, //?
