@@ -1,4 +1,4 @@
 <h1>{{appTitle}} 🚀</h1>
-<div>
-   {{>productCard}} 
-</div>
+{{#each products}}
+   {{> productCard this}} 
+{{/each}}
