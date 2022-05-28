@@ -5,7 +5,7 @@
 
             <hr>
 
-            <form action="/profile/{{currentUser_id}}/edit" method="POST">
+            <form action="/profile/edit" method="POST">
 
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
@@ -29,7 +29,7 @@
                     <input required type="text" class="form-control" id="country" name="country" value="{{location.country}}">
                 </div>              
                 <button type="submit" class="btn btn-dark">Edit profile</button>
-                <a href="/" class="btn btn-dark">Cancell</a>
+                <a href="/" class="btn btn-dark">Cancel</a>
             </form>
             <hr>
         </div>
