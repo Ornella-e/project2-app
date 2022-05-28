@@ -18,7 +18,7 @@ router.get("/logout", (req, res) => {
   router.get("/signup", displaySignup);
 
   router.post ("/signup", async (req, res, next) => {
-      const {email, password} = req.body;
+      const {email, password, username, city, fullName, country} = req.body;
 
       if (!password || !email) {
         const errorMessage = "Your password or username are not valid";
@@ -36,9 +36,15 @@ router.get("/logout", (req, res) => {
         const createdUser = await User.create({
           email,
           password: hashedPassword,
+          location: {
+            city, country
+          },     
+          fullName,
+          username
+
         });
     
-        res.redirect("/signin");
+        res.redirect("/auth/signin");
       } catch (error) {
         next(error);
       }
@@ -53,6 +59,7 @@ router.get("/logout", (req, res) => {
       res.render("auth/signin", {
         errorMessage: "Please provide an email and a a password",
       });
+      return
     }
     try {
       const foundUser = await User.findOne({ email });
@@ -60,6 +67,7 @@ router.get("/logout", (req, res) => {
         res.render("auth/signin", {
           errorMessage: "Wrong credentials",
         });
+        return
       }
   
       const checkPassword = bcrypt.compareSync(password, foundUser.password);
@@ -68,10 +76,12 @@ router.get("/logout", (req, res) => {
         res.render("auth/signin", {
           errorMessage: "Wrong credentials",
         });
+        return
       } else {
         const objectUser = foundUser.toObject();
         delete objectUser.password;
         req.session.currentUser = objectUser;
+        console.log(req.session.currentUser)
         res.redirect("/");
       }
     } catch (e) {

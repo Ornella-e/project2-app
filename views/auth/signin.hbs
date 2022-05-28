@@ -1,6 +1,6 @@
 <h2>Signin</h2>
 
-<form action="/signin" method="post">
+<form action="/auth/signin" method="post">
 
 <div>
     <label for="email">Email</label>
@@ -12,4 +12,7 @@
     <input type="password" name="password" id="password" value="euge" required>
 </div>
 <button>Login</button>
+{{#if errorMessage}}
+<p>{{errorMessage}}</p>
+{{/if}}
 </form>
