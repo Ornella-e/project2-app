@@ -5,7 +5,8 @@ const Product = require("../models/Product.model");
 router.get("/", async (req, res, next) => {
     try{
         const products = await Product.find();
-        res.render("views/index", { products });
+        
+        res.render("index", { products });
     }catch (error){
         next(error);
     }
