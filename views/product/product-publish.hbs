@@ -5,7 +5,7 @@
 
             <hr>
 
-            <form action="/publish" method="POST">
+            <form action="/product/publish" method="POST">
 
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -23,14 +23,30 @@
                  <div class="mb-3">
                     <label for="country" class="form-label">Country</label>
                     <input type="text" class="form-control" id="country" name="country">
-                </div>                
-                <div class="mb-3">
-                    <label for="condition" class="form-label">Condition</label>
-                    <input type="text" class="form-control" id="condition" name="condition">
-                </div>
+                </div> 
+                 <div class="mb-3">
+                     <label for="category" class="form-label">Category</label>                
+                        <select class="form-select" aria-label="Default select example">
+                         <option selected>Open this select menu</option>
+                         <option value="booksandmusic">Books and Music</option>
+                         <option value="clothes">Clothes</option>
+                         <option value="electronics">Electronics</option>
+                         <option value="furniture">Furniture</option>
+                         <option value="miscellaneous">Miscellaneous</option>
+                         </select>
+                </div>               
+                
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <input type="text" class="form-control" id="description" name="description">
+                </div>
+                <div class="mb-3">
+                     <label for="condition" class="form-label">Condition</label>                
+                       <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="New">New</option>
+                        <option value="Used">Used</option>
+                        </select>
                 </div>
                 <div class="mb-3">
                     <label for="dateListed" class="form-label">Date published</label>
