@@ -39,7 +39,7 @@ router.post("/edit", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
    // console.log('user id:', req.session.currentUser._id);
     try {
-        const  id  = req.session.currentUser._id;
+        const id = req.session.currentUser._id;
         const user = await User.findById(id)
         console.log(user)
         res.render("profile/profile-details", {user});

@@ -11,11 +11,9 @@ router.get("/", async(req, res, next) => {
 }
 });
 
-
 router.use("/auth", require("./auth.routes"));
 router.use("/product", require("./product.routes"));
 router.use("/profile", require("./profile.routes"));
 router.use("/about", require("./about.routes"));
-
 
 module.exports = router;
