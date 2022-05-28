@@ -18,7 +18,7 @@ const data = [
 },
 {
     name:`Keyboard Hohner` ,
-    imageUrl: '/images/organ-paino-bass.png',
+    imageUrl: '/images/organ-piano-bass.png',
     location: {
         city: "Berlin",
         country: "Germany"
