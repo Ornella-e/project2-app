@@ -27,7 +27,7 @@ router.post ("/publish", async (req, res, next)=>{
             description,
             dateListed
         });
-        res.redirect("/profile");
+        res.redirect("/");
     }catch(error){
         next (error);
     }
