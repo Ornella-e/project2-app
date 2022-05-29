@@ -82,6 +82,17 @@ router.post("/:id/delete", async (req, res, next)=>{
     }
 })
 
+router.get("/search", async (req, res) => {
+	const { q } = req.query;
+	try {
+		const searchResults = await Product.find({ products:{$regex: q}});
+		console.log(searchResults);
+		res.render("product/product-details", { data : searchResults });
+	} catch (e) {
+		console.error(e);
+	}
+});
+
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;

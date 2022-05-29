@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Questions</h1>
+  {{#each question}}
+    <div class="col-4">
+      <a href="/question/{{this._id}}">{{this.user}}</a>
+      <div class="action-links">
+        <a href="/question/{{this._id}}/edit" class="btn btn-dark">Edit</a>
+        <form action="/question/{{this._id}}/delete" method="post">
+          <button type="submit" class="btn btn-warning">Delete</button>
+        </form>
+      </div>
+    </div>
+  {{/each}}
+</div>
