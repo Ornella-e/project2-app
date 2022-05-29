@@ -19,14 +19,29 @@
                 <div class="mb-3">
                     <label for="city" class="form-label">City</label>
                     <input type="text" class="form-control" id="city" name="city" value="{{location.city}}">
-                </div>       
-                 <div class="mb-3">
+                </div>
+                <div class="mb-3">
                     <label for="country" class="form-label">Country</label>
                     <input type="text" class="form-control" id="country" name="country" value="{{location.country}}">
-                </div>              
+                </div>
                 <div class="mb-3">
-                    <label for="condition" class="form-label">Condition</label>
-                    <input type="text" class="form-control" id="condition" name="condition" value="{{condition}}">
+                    <label for="category" class="form-label">Category</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="booksandmusic">Books and Music</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="miscellaneous">Miscellaneous</option>
+                    </select>
+                </div>
+                 <div class="mb-3">
+                     <label for="condition" class="form-label">Condition</label>                
+                       <select class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        <option value="New">New</option>
+                        <option value="Used">Used</option>
+                        </select>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>

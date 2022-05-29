@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const session = require("express-session");
 const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
 
@@ -21,6 +22,7 @@ router.post ("/publish", async (req, res, next)=>{
         const {name, imageUrl, city, country, condition, category, description, dateListed} = req.body;
         await Product.create({
             name,
+            owner: req.session.currentUser._id,
             imageUrl,
             location:{city, country},
             condition,
@@ -47,7 +49,7 @@ next(error);
 router.post("/:id/edit", async (req, res, next)=>{
     try{
         const {id}=req.params;
-        const {name, imageUrl, city, country, condition, description}=req.body;
+        const {name, imageUrl, city, country, condition, category, description}=req.body;
         await Product.findByIdAndUpdate(id,
             {
                 name,
@@ -57,7 +59,7 @@ router.post("/:id/edit", async (req, res, next)=>{
                     country
                 },
                 condition,
-                categorie,
+                category,
                 description
             },
                 {

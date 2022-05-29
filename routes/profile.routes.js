@@ -41,7 +41,7 @@ router.get("/", async (req, res, next) => {
     try {
         const id = req.session.currentUser._id;
         const user = await User.findById(id)
-        console.log(user)
+        //console.log(user)
         res.render("profile/profile-details", {user});
     } catch (error) {
         next(error);
