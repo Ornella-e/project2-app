@@ -13,6 +13,66 @@ router.get("/", async (req, res, next) => {
     }
 })
 
+router.get("/booksAndMusic", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const booksAndMusicProducts = products.filter((product) => {
+            return product.category === 'Books and Music';
+        });
+        res.render("product/booksAndMusic", { booksAndMusicProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/clothes", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const clotheProducts = products.filter((product) => {
+            return product.category === 'Clothes';
+        });
+        res.render("product/clothes", { clotheProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/electronics", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const electronicProducts = products.filter((product) => {
+            return product.category === 'Electronics';
+        });
+        res.render("product/electronics", { electronicProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/furniture", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const furnitureProducts = products.filter((product) => {
+            return product.category === 'Furniture';
+        });
+        res.render("product/furniture", { furnitureProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/miscellaneous", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const miscellaneousProducts = products.filter((product) => {
+            return product.category === 'Miscellaneous';
+        });
+        res.render("product/miscellaneous", { miscellaneousProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
 router.get("/publish", (req, res, next)=>{
     res.render("product/product-publish");
 })
