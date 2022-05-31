@@ -16,11 +16,12 @@
       <button type="submit" class="btn btn-dark">Submit</button>
     </div>
   </div>
-
   <hr>
   <button class="btn btn-dark"><a href="/">Home</a></button>
+  {{#if isOwner}}
   <button class="btn btn-dark"><a href="/product/{{_id}}/edit">Edit</a></button>
   <form action="/product/{{_id}}/delete" method="post">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
+  {{/if}}
 </div>

@@ -26,6 +26,9 @@ const projectName = "project2-app";
 
 app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
+const exposeUsers = require('./middlewares/exposeUsers');
+app.use(exposeUsers);
+
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
 app.use("/", index);

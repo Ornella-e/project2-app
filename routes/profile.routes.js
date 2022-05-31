@@ -1,4 +1,5 @@
 const User = require("../models/User.model");
+const Product = require("../models/Product.model");
 
 const router = require("express").Router();
 
@@ -37,12 +38,15 @@ router.post("/edit", async (req, res, next) => {
 });
 
 router.get("/", async (req, res, next) => {
-   // console.log('user id:', req.session.currentUser._id);
     try {
         const id = req.session.currentUser._id;
         const user = await User.findById(id)
-        //console.log(user)
-        res.render("profile/profile-details", {user});
+        const products = await Product.find()
+        const myAds = await products.filter((product) => {
+            return product.owner === user;
+        });
+       console.log(myAds);
+        res.render("profile/profile-details", {user, myAds});
     } catch (error) {
         next(error);
     }
