@@ -21,7 +21,7 @@ router.get("/publish", isLoggedIn, (req, res, next)=>{
 
 router.post ("/publish", isLoggedIn, async (req, res, next)=>{
     try{
-        const {name, imageUrl, city, country, condition, category, description} = req.body;
+        const {name, imageUrl, city, country, condition, category, description, dateListed} = req.body;
         await Product.create({
             name,
             owner: req.session.currentUser,
@@ -29,7 +29,8 @@ router.post ("/publish", isLoggedIn, async (req, res, next)=>{
             location:{city, country},
             condition,
             category,
-            description
+            description,
+            dateListed
         });
         res.redirect("/");
     }catch(error){
