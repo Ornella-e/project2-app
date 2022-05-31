@@ -87,8 +87,9 @@ router.post("/:id/delete", isOwner, async (req, res, next)=>{
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
-        const product = await Product.findById(id);
-        res.render ("product/product-details", product);
+        const product = await Product.findById(id).populate('owner')
+        res.render ("product/product-details", {product, user: req.session.currentUser._id.valueOf(), 
+            owner: product.owner.username.valueOf()});
     }catch (error){
         next (error);
     }
