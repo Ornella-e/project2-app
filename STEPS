@@ -11,3 +11,9 @@ Routes :
 -create edit profile view.
 -setup get on about route.
 -create about route.
+Middlewares:
+-create exposeUsers middleware.
+-import middleware to app.js
+-create isLoggedIn middleware.
+-create isLoggesOut middleware.
+-create isowner middleware.

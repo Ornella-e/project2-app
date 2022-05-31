@@ -24,7 +24,10 @@ const productSchema = new Schema(
             enum: ['Books and music', 'Clothes', 'Electronics', 'Furniture', 'Miscellaneous']
         },
         description: String,
-        dateListed: Date, //?date that was published
+        dateListed: {
+            type: Date,
+            default: Date.now
+        },
         favorites: Number, //?
         questions: [{
             type: Schema.Types.ObjectId,

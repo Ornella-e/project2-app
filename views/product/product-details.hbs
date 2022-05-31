@@ -1,26 +1,27 @@
 <div class="container">
-  <h1>{{name}}</h1>
+  <h1>{{product.name}}</h1>
   <hr>
 
   <div class="row">
     <div class="col-8">
       <h3>Product Details</h3>
-      <img src="{{imageUrl}}" alt="author-img">
-      <p>Description: {{description}}</p>
-      <p>Condition: {{condition}}</p>
-      <p>Location: {{location.city}}, {{location.country}}</p>
+      <img src="{{product.imageUrl}}" alt="author-img">
+      <p>Description: {{product.description}}</p>
+      <p>Condition: {{product.condition}}</p>
+      <p>Location: {{product.location.city}}, {{product.location.country}}</p>
     </div>
     <div class="col-4">
-      <label for="comments" class="form-label">Ask a question to {{owner.username}}!</label>
+      <label for="comments" class="form-label">Ask a question to <b>{{owner}}</b>!</label>
       <input type="text" class="form-control" id="comments" name="comments">
       <button type="submit" class="btn btn-dark">Submit</button>
     </div>
   </div>
-
   <hr>
   <button class="btn btn-dark"><a href="/">Home</a></button>
-  <button class="btn btn-dark"><a href="/product/{{_id}}/edit">Edit</a></button>
-  <form action="/product/{{_id}}/delete" method="post">
+  {{#ifEquals owner._id user._id}}
+  <button class="btn btn-dark"><a href="/product/{{product._id}}/edit">Edit</a></button>
+  <form action="/product/{{product._id}}/delete" method="post">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
+  {{/ifEquals}}
 </div>
