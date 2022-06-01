@@ -96,7 +96,7 @@ router.get("/search", async (req, res) => {
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
-        const product = await Product.findById(id);
+        const product = await Product.findById(id).populate('comment');
         const questions = await Question.find();
         const myQuestions = questions.filter((question)=> {
             return question.product._id === id;
