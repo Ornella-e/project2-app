@@ -11,8 +11,14 @@
       <p>Location: {{location.city}}, {{location.country}}</p>
     </div>
     <div class="col-4">
+      <form action="/product/{{_id}}" method="post">
       <label for="comments" class="form-label">Ask a question to {{owner.username}}!</label>
-       <a href="/question/create" class="btn btn-dark">Ask a question here!</a>
+       <input type="text" class="form-control" id="question" name="question">
+       <button type="submit" class="btn btn-danger">Submit</button>
+       </form>
+       {{#each myQuestions}}
+       <p>{{comment}}</p>
+       {{/each}}
     </div>
   </div>
   <hr>

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const session = require("express-session");
 const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
-
+const Question = require("../models/Question.model");
 router.get("/", async (req, res, next) => {
     try{
         const products = await Product.find();
@@ -97,10 +97,28 @@ router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
         const product = await Product.findById(id);
-        res.render ("product/product-details", product);
+        const questions = await Question.find();
+        const myQuestions = questions.filter((question)=> {
+            return question.product._id === id;
+        })
+        res.render ("product/product-details", {product, myQuestions});
     }catch (error){
         next (error);
     }
 })
+router.post ("/:id", async (req, res, next)=>{
+    try{
+        const {id} = req.params;
+        const {comment} = req.body;
+        await Question.create({
+            user: session.currentUser._id,
+            comment,
+            product
+        });
+        res.render("product/product-details");
+    }catch(error){
+        next (error);
+    }
+});
 
 module.exports = router;

@@ -10,11 +10,11 @@ router.get("/create", (req, res, next)=>{
 router.post ("/create", async (req, res, next)=>{
     try{
         const {id} = req.params;
-        const {question} = req.body;
+        const {user,comment, product} = req.body;
         await Question.create({
-            question
+            user,comment,product
         });
-        res.render("question/question-create");
+        res.render("product/product-details");
     }catch(error){
         next (error);
     }
