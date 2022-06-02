@@ -10,7 +10,7 @@ const data = [
         country: "Germany"
     },
     condition:"Used",
-    category: `Books and Music`,
+    category: `Books and music`,
     description: `Hi there!! I'm giving this beautiful book for free. 
     I really enjoyed reading this book and I hope you will enjoy it too!
     Please don't hesitate to contact me if you are interested.
@@ -24,7 +24,7 @@ const data = [
         country: "Germany"
     },
     condition:'Used',
-    category: 'Books and Music',
+    category: 'Books and music',
     description: `Hello! I give for free my old piano. 
     I have had this piano for 30 years and it works perfectly. 
     An amplifier and speakers are not integrated. 

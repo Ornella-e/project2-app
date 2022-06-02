@@ -7,6 +7,7 @@
       <h3>Product Details</h3>
       <img src="{{product.imageUrl}}" alt="author-img">
       <p>Description: {{product.description}}</p>
+      <p>Category: {{product.category}}</p>
       <p>Condition: {{product.condition}}</p>
       <p>Location: {{product.location.city}}, {{product.location.country}}</p>
     </div>
@@ -19,8 +20,8 @@
        <button type="submit" class="btn btn-danger">Submit</button>
        </form>
        {{#each product.questions}}
-       <p>{{this.question}}</p>
        <p>{{this.user.username}}:</p>
+       <p>{{this.question}}</p>
        {{/each}}
 
     </div>

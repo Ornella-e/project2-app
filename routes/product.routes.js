@@ -24,7 +24,7 @@ router.get("/booksAndMusic", async (req, res, next) => {
     try{
         const products = await Product.find();
         const booksAndMusicProducts = products.filter((product) => {
-            return product.category === 'Books and Music';
+            return product.category === 'Books and music';
         });
         res.render("product/booksAndMusic", { booksAndMusicProducts });
     }catch (error){
