@@ -96,26 +96,29 @@ router.get("/search", async (req, res) => {
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
-        const product = await Product.findById(id).populate('comment');
-        const questions = await Question.find();
-        const myQuestions = questions.filter((question)=> {
-            return question.product._id === id;
-        })
-        res.render ("product/product-details", {product, myQuestions});
+        const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
+        console.log(product);
+       
+        res.render ("product/product-details", {product});
     }catch (error){
         next (error);
     }
 })
 router.post ("/:id", async (req, res, next)=>{
+   
     try{
         const {id} = req.params;
-        const {comment} = req.body;
-        await Question.create({
-            user: session.currentUser._id,
-            comment,
-            product
+        const {question} = req.body;
+        const newQuestion = await Question.create({
+            user: req.session.currentUser._id,
+            question
         });
-        res.render("product/product-details");
+       const product = await Product.findById(id).exec();
+       product.questions.push(newQuestion);
+       const updatedProduct = await product.save();
+       const product1 = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
+       console.log(product1);
+        res.render("product/product-details", {product: product1});
     }catch(error){
         next (error);
     }
