@@ -15,5 +15,6 @@ router.use("/auth", require("./auth.routes"));
 router.use("/product", require("./product.routes"));
 router.use("/profile", require("./profile.routes"));
 router.use("/about", require("./about.routes"));
+router.use("/question", require ("./question.routes"));
 
 module.exports = router;

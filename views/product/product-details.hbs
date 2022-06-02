@@ -11,9 +11,18 @@
       <p>Location: {{product.location.city}}, {{product.location.country}}</p>
     </div>
     <div class="col-4">
-      <label for="comments" class="form-label">Ask a question to <b>{{owner}}</b>!</label>
-      <input type="text" class="form-control" id="comments" name="comments">
-      <button type="submit" class="btn btn-dark">Submit</button>
+
+    
+      <form action="/product/{{product._id}}" method="post">
+      <label for="question" class="form-label">Ask a question to {{owner.username}}!</label>
+       <input type="text" class="form-control" id="question" name="question">
+       <button type="submit" class="btn btn-danger">Submit</button>
+       </form>
+       {{#each product.questions}}
+       <p>{{this.question}}</p>
+       <p>{{this.user.username}}:</p>
+       {{/each}}
+
     </div>
   </div>
   <hr>

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1>Edit {{_id}}</h1>
+
+            <hr>
+
+            <form action="/question/{{_id}}/edit" method="POST">
+                <div class="mb-3">
+                    <label for="question" class="form-label">Question</label>
+                    <input type="text" class="form-control" id="question" name="question" value="{{question}}">
+                </div>
+                <button type="submit" class="btn btn-dark">Edit question</button>
+                <a href="/" class="btn btn-dark">Home</a>
+            </form>
+            <hr>
+        </div>
+    </div>
+</div>

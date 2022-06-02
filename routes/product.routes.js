@@ -2,8 +2,12 @@ const router = require("express").Router();
 const session = require("express-session");
 const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
+
+const Question = require("../models/Question.model");
+
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const isOwner = require('../middlewares/isOwner');
+
 
 router.get("/", async (req, res, next) => {
     try{
@@ -146,15 +150,48 @@ router.post("/:id/delete", isOwner, async (req, res, next)=>{
     }
 })
 
+router.get("/search", async (req, res) => {
+	const { q } = req.query;
+	try {
+		const searchResults = await Product.find({ products:{$regex: q}});
+		console.log(searchResults);
+		res.render("product/product-details", { data : searchResults });
+	} catch (e) {
+		console.error(e);
+	}
+});
+
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
-        const product = await Product.findById(id).populate('owner')
-        res.render ("product/product-details", {product, user: req.session.currentUser._id.valueOf(), 
-            owner: product.owner.username.valueOf()});
+
+        const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
+        console.log(product);
+       
+        res.render ("product/product-details", {product});
+
     }catch (error){
         next (error);
     }
 })
+router.post ("/:id", async (req, res, next)=>{
+   
+    try{
+        const {id} = req.params;
+        const {question} = req.body;
+        const newQuestion = await Question.create({
+            user: req.session.currentUser._id,
+            question
+        });
+       const product = await Product.findById(id).exec();
+       product.questions.push(newQuestion);
+       const updatedProduct = await product.save();
+       const product1 = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
+       console.log(product1);
+        res.render("product/product-details", {product: product1});
+    }catch(error){
+        next (error);
+    }
+});
 
 module.exports = router;
