@@ -3,8 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 
     margin: 0;
+
     background-image: url("");
     background-size: cover;
+    background-attachment: fixed;
   
 }
 
@@ -19,5 +21,4 @@ h1 {
 .card img {
   width: 200px;
   height: 200px;
- 
 }

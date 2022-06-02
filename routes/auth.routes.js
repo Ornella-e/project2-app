@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
 const User = require ("../models/User.model");
+const isLoggedOut = require("../middlewares/isLoggedOut");
+const isLoggedIn = require("../middlewares/isLoggedIn");
 
 const displaySignup = (req, res) => res.render("auth/signup");
 
-router.get("/logout", (req, res) => { 
+router.get("/logout", isLoggedIn, (req, res) => { 
     req.session.destroy((error) => {
       if (error) {
         const errorMessage = error.message;
@@ -49,7 +51,8 @@ router.get("/logout", (req, res) => {
         next(error);
       }
   });
-  router.get("/signin", (req, res) => {
+
+  router.get("/signin", isLoggedOut, (req, res) => {
     res.render("auth/signin");
   });
   router.post("/signin", async (req, res, next) => {

@@ -5,12 +5,13 @@
   <div class="row">
     <div class="col-8">
       <h3>Product Details</h3>
-      <img src="{{imageUrl}}" alt="author-img">
-      <p>Description: {{description}}</p>
-      <p>Condition: {{condition}}</p>
-      <p>Location: {{location.city}}, {{location.country}}</p>
+      <img src="{{product.imageUrl}}" alt="author-img">
+      <p>Description: {{product.description}}</p>
+      <p>Condition: {{product.condition}}</p>
+      <p>Location: {{product.location.city}}, {{product.location.country}}</p>
     </div>
     <div class="col-4">
+
     
       <form action="/product/{{product._id}}" method="post">
       <label for="question" class="form-label">Ask a question to {{owner.username}}!</label>
@@ -21,12 +22,15 @@
        <p>{{this.question}}</p>
        <p>{{this.user.username}}:</p>
        {{/each}}
+
     </div>
   </div>
   <hr>
   <button class="btn btn-dark"><a href="/">Home</a></button>
-  <button class="btn btn-dark"><a href="/product/{{_id}}/edit">Edit</a></button>
-  <form action="/product/{{_id}}/delete" method="post">
+  {{#ifEquals owner._id user._id}}
+  <button class="btn btn-dark"><a href="/product/{{product._id}}/edit">Edit</a></button>
+  <form action="/product/{{product._id}}/delete" method="post">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
+  {{/ifEquals}}
 </div>

@@ -10,7 +10,7 @@ const data = [
         country: "Germany"
     },
     condition:"Used",
-    category: `Books and music`,
+    category: `Books and Music`,
     description: `Hi there!! I'm giving this beautiful book for free. 
     I really enjoyed reading this book and I hope you will enjoy it too!
     Please don't hesitate to contact me if you are interested.
@@ -24,7 +24,7 @@ const data = [
         country: "Germany"
     },
     condition:'Used',
-    category: 'Books and music',
+    category: 'Books and Music',
     description: `Hello! I give for free my old piano. 
     I have had this piano for 30 years and it works perfectly. 
     An amplifier and speakers are not integrated. 
@@ -38,7 +38,7 @@ const data = [
         country: "Spain"
     },
     condition:'Used',
-    category: 'Books and music',
+    category: 'Books and Music',
     description: `FMB Bb Trompete Ztr 2000. Wind instrument.`
 },
 {
@@ -49,7 +49,7 @@ const data = [
         country: "Portugal"
     },
     condition:'New',
-    category: 'Books and music',
+    category: 'Books and Music',
     description: `Hi everyone! I got this dictionary for my trip to London. 
     It is almost new. Contact me if you are interested. Bye! Maria.`
 },
@@ -61,7 +61,7 @@ const data = [
         country: "England"
     },
     condition:'Used',
-    category: 'Books and music',
+    category: 'Books and Music',
     description: `7 books in good condition 
     (one is even new and unread), 
     all by John Irving:

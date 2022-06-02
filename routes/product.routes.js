@@ -2,7 +2,13 @@ const router = require("express").Router();
 const session = require("express-session");
 const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
+
 const Question = require("../models/Question.model");
+
+const isLoggedIn = require("../middlewares/isLoggedIn");
+const isOwner = require('../middlewares/isOwner');
+
+
 router.get("/", async (req, res, next) => {
     try{
         const products = await Product.find();
@@ -13,16 +19,78 @@ router.get("/", async (req, res, next) => {
     }
 })
 
-router.get("/publish", (req, res, next)=>{
+
+router.get("/booksAndMusic", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const booksAndMusicProducts = products.filter((product) => {
+            return product.category === 'Books and Music';
+        });
+        res.render("product/booksAndMusic", { booksAndMusicProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/clothes", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const clotheProducts = products.filter((product) => {
+            return product.category === 'Clothes';
+        });
+        res.render("product/clothes", { clotheProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/electronics", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const electronicProducts = products.filter((product) => {
+            return product.category === 'Electronics';
+        });
+        res.render("product/electronics", { electronicProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/furniture", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const furnitureProducts = products.filter((product) => {
+            return product.category === 'Furniture';
+        });
+        res.render("product/furniture", { furnitureProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+router.get("/miscellaneous", async (req, res, next) => {
+    try{
+        const products = await Product.find();
+        const miscellaneousProducts = products.filter((product) => {
+            return product.category === 'Miscellaneous';
+        });
+        res.render("product/miscellaneous", { miscellaneousProducts });
+    }catch (error){
+        next(error);
+    }
+})
+
+
+router.get("/publish", isLoggedIn, (req, res, next)=>{
     res.render("product/product-publish");
 })
 
-router.post ("/publish", async (req, res, next)=>{
+router.post ("/publish", isLoggedIn, async (req, res, next)=>{
     try{
         const {name, imageUrl, city, country, condition, category, description, dateListed} = req.body;
         await Product.create({
             name,
-            owner: req.session.currentUser._id,
+            owner: req.session.currentUser,
             imageUrl,
             location:{city, country},
             condition,
@@ -36,7 +104,7 @@ router.post ("/publish", async (req, res, next)=>{
     }
 });
 
-router.get("/:id/edit", async (req, res, next)=>{
+router.get("/:id/edit", isOwner, async (req, res, next)=>{
 try {
     const {id} = req.params;
     const product = await Product.findById(id);
@@ -46,7 +114,7 @@ next(error);
 }
 });
 
-router.post("/:id/edit", async (req, res, next)=>{
+router.post("/:id/edit",isOwner, async (req, res, next)=>{
     try{
         const {id}=req.params;
         const {name, imageUrl, city, country, condition, category, description}=req.body;
@@ -72,7 +140,7 @@ router.post("/:id/edit", async (req, res, next)=>{
     }
 });
 
-router.post("/:id/delete", async (req, res, next)=>{
+router.post("/:id/delete", isOwner, async (req, res, next)=>{
     try{
         const {id}=req.params;
         await Product.findByIdAndDelete(id);
@@ -96,10 +164,12 @@ router.get("/search", async (req, res) => {
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
+
         const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
         console.log(product);
        
         res.render ("product/product-details", {product});
+
     }catch (error){
         next (error);
     }
