@@ -23,7 +23,11 @@ const userSchema = new Schema(
     location: {
       city: String,
       country: String
-    }
+    },
+    products: [{
+      type: Schema.Types.ObjectId,
+      ref: "Product"
+  }]
   },
   {
     timestamps: true,
