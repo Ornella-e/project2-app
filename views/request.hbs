@@ -1,0 +1,12 @@
+ <div class="col-4">
+  <form action="/product/{{product._id}}/request" method="post">
+      <label for="comment" class="form-label">private chat {{owner.username}}!</label>
+       <input type="text" class="form-control" id="comment" name="comment">
+       <button type="submit" class="btn btn-danger">Request this product</button>
+       </form>
+       {{#each product.comments}}
+        <p>{{this.user.username}}:</p>
+       <p>{{this.comment}}</p>
+       {{/each}}
+    </div>
+ 

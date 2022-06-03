@@ -32,6 +32,10 @@ const productSchema = new Schema(
         questions: [{
             type: Schema.Types.ObjectId,
             ref: "Question"
+        }],
+        comments: [{
+            type: Schema.Types.ObjectId,
+            ref: "Question"
         }]
     }
 );
