@@ -43,8 +43,8 @@ router.get("/", async (req, res, next) => {
         console.log(id);
         const user = await User.findById(id)
 
-        const products = await Product.find().populate('owner');
-        products.forEach((product) => console.log(product.owner))
+        const products = await Product.find().populate({path:'owner', model:'User', select:'username'})
+        products.forEach((product) => console.log(product.owner.username))
 
         const myAds = products.filter((product) => {
             return product.owner._id.valueOf() === id;
