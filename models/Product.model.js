@@ -21,7 +21,7 @@ const productSchema = new Schema(
         },
         category: {
             type: String,
-            enum: ['Books and music', 'Clothes', 'Electronics', 'Furniture', 'Miscellaneous']
+            enum: ['Books and Music', 'Clothes', 'Electronics', 'Furniture', 'Miscellaneous']
         },
         description: String,
         dateListed: {
