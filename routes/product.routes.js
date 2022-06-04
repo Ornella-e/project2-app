@@ -168,7 +168,7 @@ router.get("/:id/request", isLoggedIn, async (req, res, next) => {
     try{
         const {id} = req.params;
 
-        const product = await Product.findById(id).populate({path:'comments', populate:{path:'user', model:'User', select:'username'}});
+        const product = await Product.findById(id).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
         console.log(product);
        
         res.render ("request", {product});
@@ -183,14 +183,14 @@ router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
         const {comment} = req.body;
         const newRequest = await Request.create({
             user: req.session.currentUser._id,
-            comment
+            request
         });
        const product = await Product.findById(id).exec();
-       product.comments.push(newRequest);
+       product.requests.push(newRequest);
        const updatedProduct = await product.save();
-       const commentProd = await Product.findById(id).populate({path:'comments', populate:{path:'user', model:'User', select:'username'}});
-       console.log(commentProd);
-        res.render("request", {product: commentProd});
+       const requestProd = await Product.findById(id).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
+       console.log(requestProd);
+        res.render("request", {product: requestProd});
     }catch(error){
         next (error);
     }

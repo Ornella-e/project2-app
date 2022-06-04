@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const requestSchema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: "User" },
-    comment: { type: String, maxlength: 200 },
+    request: { type: String, maxlength: 200 },
     product: {  type: Schema.Types.ObjectId, ref: "Product" }
   });
 

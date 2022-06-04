@@ -33,9 +33,9 @@ const productSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Question"
         }],
-        comments: [{
+        requests: [{
             type: Schema.Types.ObjectId,
-            ref: "Question"
+            ref: "Request"
         }]
     }
 );
