@@ -202,7 +202,7 @@ router.get("/:id", async (req, res, next) => {
         const {id} = req.params;
 
         const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
-        console.log(product);
+        console.log('owner:', product.owner.username);
        
         res.render ("product/product-details", {product});
 
@@ -222,9 +222,9 @@ router.post ("/:id", async (req, res, next)=>{
        const product = await Product.findById(id).exec();
        product.questions.push(newQuestion);
        const updatedProduct = await product.save();
-       const product1 = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
-       console.log(product1);
-        res.render("product/product-details", {product: product1});
+       const selectedProduct = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
+      
+        res.render("product/product-details", {product: selectedProduct});
     }catch(error){
         next (error);
     }
