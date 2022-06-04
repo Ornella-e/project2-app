@@ -1,12 +1,13 @@
 const router = require("express").Router();
-const session = require("express-session");
-const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
+
 const Request = require("../models/Request.model");
 const Question = require("../models/Question.model");
 const User = require("../models/User.model");
+
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const isOwner = require('../middlewares/isOwner');
+
 
 
 router.get("/", async (req, res, next) => {
@@ -88,6 +89,7 @@ router.get("/publish", isLoggedIn, (req, res, next)=>{
 router.post ("/publish", isLoggedIn, async (req, res, next)=>{
     try{
         const {name, imageUrl, city, country, condition, category, description, dateListed} = req.body;
+        console.log(category, condition);
         await Product.create({
             name,
             owner: req.session.currentUser,
@@ -152,10 +154,11 @@ router.post("/:id/delete", isOwner, async (req, res, next)=>{
 
 router.get("/search", async (req, res) => {
 	const { q } = req.query;
+    console.log(q)
 	try {
-		const searchResults = await Product.find({ products:{$regex: q}});
-		console.log(searchResults);
-		res.render("product/product-details", { data : searchResults });
+		const searchResults = await Product.find({name:{$regex: q, $options: 'i'}});
+		console.log('search results:', searchResults);
+		res.render("product/searchResults", { searchResults });
 	} catch (e) {
 		console.error(e);
 	}

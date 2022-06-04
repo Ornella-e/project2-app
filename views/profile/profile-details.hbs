@@ -6,9 +6,13 @@
     <p>Email: {{email}}</p>
     {{/with}}
     <h4>My ads</h4>
-    {{#each myAds}}
-    {{> productCard this}}
-    {{/each}}
+    <div class="container">
+        <div class="row">
+            {{#each myAds}}
+            {{> productCard this}}
+            {{/each}}
+        </div>
+    </div>
     <h4>My requests</h4>
     <button class="btn btn-dark"><a href="/profile/edit">Edit my profile</a></button>
 </div>

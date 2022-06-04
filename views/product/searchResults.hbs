@@ -1,0 +1,14 @@
+<h1>Search results</h1>
+<div class="container">
+    <div class="row">
+        {{#if searchResults}}
+
+        {{#each searchResults}}
+        {{> productCard this}}
+        {{/each}}
+        
+        {{else}}
+        <p>No search results</p>
+        {{/if}}
+    </div>
+</div>
