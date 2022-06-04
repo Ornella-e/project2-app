@@ -168,10 +168,12 @@ router.get("/:id/request", isLoggedIn, async (req, res, next) => {
     try{
         const {id} = req.params;
 
-        const product = await Product.findById(id).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
+        const product = await Product.findById(id).populate({path:'requests', populate:{path:'buyer seller', model:'User', select:'username'}});
         console.log(product);
-       
-        res.render ("request", {product});
+        console.log(req.session.currentUser, product.owner, product._id)
+       const requestedProd = await Request.find({buyer:req.session.currentUser._id, seller:product.owner, product:product._id}).populate({path:'buyer seller', model:'User', select:'username'});;
+       console.log("this is teh request", requestedProd)
+        res.render ("request/request", {product, requestedProd});
     }catch (error){
         next (error);
     }
@@ -180,19 +182,50 @@ router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
    
     try{
         const {id} = req.params;
-        const {comment} = req.body;
+        const {request} = req.body;
+        const product = await Product.findById(id).exec();
         const newRequest = await Request.create({
-            user: req.session.currentUser._id,
-            request
+            buyer: req.session.currentUser._id,
+            seller:product.owner,
+            request:[{user:req.session.currentUser,request}] 
         });
-       const product = await Product.findById(id).exec();
+      
        product.requests.push(newRequest);
        const updatedProduct = await product.save();
-       const requestProd = await Product.findById(id).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
+       const requestProd = await Product.findById(id).populate({path:'requests', populate:{path:'buyer seller', model:'User', select:'username'}});
        console.log(requestProd);
-        res.render("request", {product: requestProd});
+        res.render("request/request", {product: requestProd});
     }catch(error){
         next (error);
+    }
+});
+
+router.get("/:id/request/edit", isOwner, async (req, res, next) => {
+    try {
+        const {id} = req.params;
+        const product = await Product.findById(id).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
+        console.log("here");
+        res.render("request/request-edit", product);
+    }catch (error){
+    next(error);
+    }
+})
+router.post ("/:id/request/edit", isOwner, async (req, res, next)=>{
+   
+    try{
+        const {id}=req.params;
+        const {request}=req.body;
+        await Request.findByIdAndUpdate(id,
+            {
+                request
+            },
+                {
+                    new: true
+                
+            }).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
+            res.redirect(`/product/${this._id}/request/edit`);
+    }catch(error){
+        next(error);
     }
 });
 
