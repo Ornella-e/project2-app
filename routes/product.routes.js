@@ -180,7 +180,7 @@ router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
    
     try{
         const {id} = req.params;
-        const {comment} = req.body;
+        const {request} = req.body;
         const newRequest = await Request.create({
             user: req.session.currentUser._id,
             request

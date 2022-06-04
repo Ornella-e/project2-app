@@ -4,7 +4,7 @@
        <input type="text" class="form-control" id="request" name="request">
        <button type="submit" class="btn btn-danger">Send a message</button>
        </form>
-       {{#each product.request}}
+       {{#each product.requests}}
         <p>{{this.user.username}}:</p>
        <p>{{this.request}}</p>
        {{/each}}

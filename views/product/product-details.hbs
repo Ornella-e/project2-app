@@ -31,7 +31,6 @@
   <form action="/product/{{product._id}}/delete" method="post">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
-  {{else}}
+   {{/ifEquals}}
   <button class="btn btn-dark"><a href="/product/{{product._id}}/request">Request</a></button>
-  {{/ifEquals}}
 </div>
