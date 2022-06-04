@@ -1,6 +1,10 @@
 const router = require("express").Router();
 const Product = require("../models/Product.model");
+
+const Request = require("../models/Request.model");
 const Question = require("../models/Question.model");
+const User = require("../models/User.model");
+
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const isOwner = require('../middlewares/isOwner');
 
@@ -160,6 +164,39 @@ router.get("/search", async (req, res) => {
 	}
 });
 
+router.get("/:id/request", isLoggedIn, async (req, res, next) => {
+    try{
+        const {id} = req.params;
+
+        const product = await Product.findById(id).populate({path:'comments', populate:{path:'user', model:'User', select:'username'}});
+        console.log(product);
+       
+        res.render ("request", {product});
+    }catch (error){
+        next (error);
+    }
+})
+router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
+   
+    try{
+        const {id} = req.params;
+        const {comment} = req.body;
+        const newRequest = await Request.create({
+            user: req.session.currentUser._id,
+            comment
+        });
+       const product = await Product.findById(id).exec();
+       product.comments.push(newRequest);
+       const updatedProduct = await product.save();
+       const commentProd = await Product.findById(id).populate({path:'comments', populate:{path:'user', model:'User', select:'username'}});
+       console.log(commentProd);
+        res.render("request", {product: commentProd});
+    }catch(error){
+        next (error);
+    }
+});
+
+
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
@@ -192,5 +229,7 @@ router.post ("/:id", async (req, res, next)=>{
         next (error);
     }
 });
+
+
 
 module.exports = router;
