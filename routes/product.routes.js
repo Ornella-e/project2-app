@@ -1,12 +1,9 @@
 const router = require("express").Router();
-const session = require("express-session");
-const async = require("hbs/lib/async");
 const Product = require("../models/Product.model");
-
 const Question = require("../models/Question.model");
-
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const isOwner = require('../middlewares/isOwner');
+
 
 
 router.get("/", async (req, res, next) => {
@@ -153,9 +150,9 @@ router.post("/:id/delete", isOwner, async (req, res, next)=>{
 router.get("/search", async (req, res) => {
 	const { q } = req.query;
 	try {
-		const searchResults = await Product.find({ products:{$regex: q}});
-		console.log(searchResults);
-		res.render("product/product-details", { data : searchResults });
+		const searchResults = await Product.find({ name:{$regex: q}});
+		console.log('search results:', searchResults);
+		res.render("product/searchResults", { searchResults });
 	} catch (e) {
 		console.error(e);
 	}
