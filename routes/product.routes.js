@@ -85,6 +85,7 @@ router.get("/publish", isLoggedIn, (req, res, next)=>{
 router.post ("/publish", isLoggedIn, async (req, res, next)=>{
     try{
         const {name, imageUrl, city, country, condition, category, description, dateListed} = req.body;
+        console.log(category, condition);
         await Product.create({
             name,
             owner: req.session.currentUser,
@@ -149,8 +150,9 @@ router.post("/:id/delete", isOwner, async (req, res, next)=>{
 
 router.get("/search", async (req, res) => {
 	const { q } = req.query;
+    console.log(q)
 	try {
-		const searchResults = await Product.find({ name:{$regex: q}});
+		const searchResults = await Product.find({name:{$regex: q, $options: 'i'}});
 		console.log('search results:', searchResults);
 		res.render("product/searchResults", { searchResults });
 	} catch (e) {
