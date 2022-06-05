@@ -183,7 +183,6 @@ router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
     try{
         const {id} = req.params;
         const {request} = req.body;
-        const product = await Product.findById(id).exec();
         const newRequest = await Request.create({
             buyer: req.session.currentUser._id,
             seller:product.owner,
@@ -235,7 +234,7 @@ router.get("/:id", async (req, res, next) => {
         const {id} = req.params;
 
         const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
-        console.log(product);
+        console.log('owner:', product.owner.username);
        
         res.render ("product/product-details", {product});
 
@@ -255,9 +254,9 @@ router.post ("/:id", async (req, res, next)=>{
        const product = await Product.findById(id).exec();
        product.questions.push(newQuestion);
        const updatedProduct = await product.save();
-       const product1 = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
-       console.log(product1);
-        res.render("product/product-details", {product: product1});
+       const selectedProduct = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
+      
+        res.render("product/product-details", {product: selectedProduct});
     }catch(error){
         next (error);
     }

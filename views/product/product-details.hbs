@@ -14,15 +14,14 @@
 
     
       <form action="/product/{{product._id}}" method="post">
-      <label for="question" class="form-label">Ask a question to {{owner.username}}!</label>
+      <label for="question" class="form-label">Ask a question!</label>
        <input type="text" class="form-control" id="question" name="question">
        <button type="submit" class="btn btn-danger">Submit</button>
        </form>
        {{#each product.questions}}
-       <p>{{this.question}}</p>
        <p>{{this.user.username}}:</p>
+       <p>{{this.question}}</p>
        {{/each}}
-
     </div>
   </div>
   <hr>
@@ -32,7 +31,6 @@
   <form action="/product/{{product._id}}/delete" method="post">
     <button type="submit" class="btn btn-danger">Delete</button>
   </form>
- 
+   {{/ifEquals}}
   <button class="btn btn-dark"><a href="/product/{{product._id}}/request">Request</a></button>
-  {{/ifEquals}}
 </div>
