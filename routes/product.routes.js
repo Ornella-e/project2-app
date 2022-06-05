@@ -179,10 +179,11 @@ router.get("/:id/request", isLoggedIn, async (req, res, next) => {
     }
 })
 router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
-   
+  
     try{
         const {id} = req.params;
         const {request} = req.body;
+        const product = await Product.findById(id).exec();
         const newRequest = await Request.create({
             buyer: req.session.currentUser._id,
             seller:product.owner,
