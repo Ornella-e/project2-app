@@ -9,15 +9,6 @@ body {
     background-attachment: fixed;
   
 }
-
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-
 .card img {
   width: 200px;
   height: 200px;
@@ -37,7 +28,7 @@ ul {
 }
 .page-footer {
   padding: 70px 0;
-  background-color: #ddc8bb;
+  background-color:#204c28 ;
 }
 
 .footer-col {
@@ -48,28 +39,32 @@ ul {
 
 .footer-col h4 {
   font-size: 18px;
-  color:#204c28;
+  color:white;
   margin-bottom: 20px;
   margin-left: 30px;
 }
 .footer-col ul li a {
   font-size: 16px;
   text-decoration: none;
-  color: #204c28;
+  color: white;
   display: block;
   transition: all 0.3s ease;
 }
 .footer-col ul li a:hover {
-  color: #204c28;
+  color: white;
   padding-left: 8px;
 }
-.container-fluid{
-  background-color: #ddc8bb;
+#navbar {
+  background-color: #204c28;
 }
+#navbar ul li a {
+  color:white;
+}
+
 .container-fluid ul li a{
   font-size: 18px;
   text-decoration: none;
-  color: #204c28;
+  
 }
 
 @media(max-width: 767px){
@@ -93,3 +88,16 @@ ul {
 
 }
 
+#logo{
+width: 10rem;
+background-color: #ddc8bb;
+
+}
+#logo-background{
+  background-color: #ddc8bb;
+  
+  }
+
+#options-nav{
+  background-color:  #204c28;
+}
