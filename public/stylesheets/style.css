@@ -37,7 +37,7 @@ ul {
 }
 .page-footer {
   padding: 70px 0;
-  background-color: rgb(206, 194, 172);
+  background-color: #ddc8bb;
 }
 
 .footer-col {
@@ -48,18 +48,26 @@ ul {
 
 .footer-col h4 {
   font-size: 18px;
-  color:green;
+  color:#204c28;
   margin-bottom: 30px;
+  margin-left: 30px;
 }
 .footer-col ul li a {
   font-size: 16px;
   text-decoration: none;
-  color: white;
+  color: #204c28;
   display: block;
   transition: all 0.3s ease;
 }
 .footer-col ul li a:hover {
-  color: white;
+  color: #204c28;
   padding-left: 8px;
 }
-
+.container-fluid{
+  background-color: #ddc8bb;
+}
+.container-fluid ul li a{
+  font-size: 16px;
+  text-decoration: none;
+  color: #204c28;
+}
