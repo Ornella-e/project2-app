@@ -49,7 +49,7 @@ ul {
 .footer-col h4 {
   font-size: 18px;
   color:#204c28;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   margin-left: 30px;
 }
 .footer-col ul li a {
@@ -67,7 +67,29 @@ ul {
   background-color: #ddc8bb;
 }
 .container-fluid ul li a{
-  font-size: 16px;
+  font-size: 18px;
   text-decoration: none;
   color: #204c28;
 }
+
+@media(max-width: 767px){
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media(max-width: 574px){
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.title{
+  color: #204c28;
+  text-align: center;
+}
+.col-sm-2 {
+  color: #204c28;
+
+}
+
