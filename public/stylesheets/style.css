@@ -22,3 +22,15 @@ h1 {
   width: 200px;
   height: 200px;
 }
+
+.home {
+  background-color: #778f72;
+  padding-top: 5%;
+  width: 100%;
+}
+
+#card {
+  background-color: #c0c7b1;
+  padding: 3%;
+  margin: 2%;
+}
