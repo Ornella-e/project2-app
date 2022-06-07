@@ -57,3 +57,7 @@ h1 {
   align-items: baseline;
   gap: 5px;
 }
+
+.profile {
+  background-color: #c0c7b1;
+}
