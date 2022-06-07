@@ -1,13 +1,11 @@
 body {
+
   padding: 0;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
-    margin: 0;
-
-    background-image: url("");
-    background-size: cover;
-    background-attachment: fixed;
-  
+  background-image: url("");
+  background-size: cover;
+  background-attachment: fixed;
 }
 .card img {
   width: 200px;
@@ -30,6 +28,7 @@ ul {
   padding: 70px 0;
   background-color:#204c28 ;
 }
+
 
 .footer-col {
   width: 25%;
@@ -100,4 +99,49 @@ background-color: #ddc8bb;
 
 #options-nav{
   background-color:  #204c28;
+}
+
+
+.home {
+  background-color: #c0c7b1;
+  padding-left: 2%;
+  width: 100%;
+}
+
+#card {
+  background-color: white;
+  height: 27rem;
+  padding: 3%;
+  margin: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#imgHome {
+  max-width: 100%;
+}
+
+.quote {
+  color: white;
+  background-color: #c0c7b1;
+  text-align: center;
+  margin: 0;
+  padding: 4rem;
+  width: 100%;
+}
+
+.loc {
+  height: 1rem;
+  display: inline;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.profile {
+  background-color: #c0c7b1;
 }
