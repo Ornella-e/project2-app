@@ -61,3 +61,25 @@ h1 {
 .profile {
   background-color: #c0c7b1;
 }
+
+.about {
+  background-color: #204c28 ;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutUl {
+  list-style-type: none;
+}
+
+.aboutTitle {
+  background-color: #c0c7b1;
+  color: white;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
