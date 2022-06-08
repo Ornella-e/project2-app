@@ -7,9 +7,14 @@ body {
   background-size: cover;
   background-attachment: fixed;
 }
-.card img {
+.card .cardImg {
   width: 200px;
   height: 200px;
+}
+
+.card .prodImg {
+  width: 17rem;
+  height: auto;
 }
 
 .container-footer {
@@ -157,7 +162,10 @@ background-color: #ddc8bb;
   align-items: center;
 }
 
-.about a:link, .about a:visited {
+.about a:link, 
+.about a:visited,
+.prodLinks a:link,
+.prodLinks a:visited {
   text-decoration: none;
   color: white;
 }
@@ -184,4 +192,9 @@ background-color: #ddc8bb;
   display: flex;
   flex-direction: row;
 }
-
+.question {
+  background-color: white;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1rem;
+}
