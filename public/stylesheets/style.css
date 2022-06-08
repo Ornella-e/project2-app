@@ -37,13 +37,13 @@ ul {
 }
 
 .footer-col h4 {
-  font-size: 18px;
+  font-size: 16px;
   color:white;
   margin-bottom: 20px;
   margin-left: 30px;
 }
 .footer-col ul li a {
-  font-size: 16px;
+  font-size: 13px;
   text-decoration: none;
   color: white;
   display: block;
@@ -55,8 +55,9 @@ ul {
 }
 #navbar {
   background-color: #204c28;
+  padding: 3px;
 }
-#navbar ul li a {
+#navbar ul li a, #navbar a {
   color:white;
 }
 
@@ -88,7 +89,7 @@ ul {
 }
 
 #logo{
-width: 10rem;
+width: 7rem;
 background-color: #ddc8bb;
 
 }
