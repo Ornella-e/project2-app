@@ -1,9 +1,9 @@
+<div class="forms">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h1>Edit my profile</h1>
+            <h2 class="title p-5">Edit my profile</h2>
 
-            <hr>
 
             <form action="/profile/edit" method="POST">
 
@@ -28,10 +28,11 @@
                     <label for="country" class="form-label">Country</label>
                     <input required type="text" class="form-control" id="country" name="country" value="{{location.country}}">
                 </div>              
-                <button type="submit" class="btn btn-dark">Edit profile</button>
-                <a href="/" class="btn btn-dark">Cancel</a>
+                <button type="submit" class="btn btn-success" id="button-form">Edit profile</button>
+                <a href="/" class="btn btn-success" id="button-form">Cancel</a>
             </form>
-            <hr>
+           
         </div>
     </div>
+</div>
 </div>
