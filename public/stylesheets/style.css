@@ -145,3 +145,42 @@ background-color: #ddc8bb;
 .profile {
   background-color: #c0c7b1;
 }
+
+.about {
+  background-color: #204c28 ;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about a:link, .about a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.aboutUl {
+  list-style-type: none;
+}
+
+.aboutTitle {
+  background-color: #c0c7b1;
+  color: white;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.line {
+  width: 60%;
+  border-bottom: solid 1px;
+  border-color: white;
+}
+
+.picsDiv {
+  display: flex;
+  flex-direction: row;
+}
+
