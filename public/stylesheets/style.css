@@ -1,22 +1,106 @@
 body {
+
+  padding: 0;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("");
   background-size: cover;
   background-attachment: fixed;
 }
-
-a {
-  color: #00b7ff;
-}
-
-h1 {
-  color: 15px;
-}
-
 .card img {
   width: 200px;
   height: 200px;
 }
+
+.container-footer {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.footer-row {
+  display:flex;
+  flex-wrap: wrap;
+}
+ul {
+  list-style: none;
+}
+.page-footer {
+  padding: 70px 0;
+  background-color:#204c28 ;
+}
+
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  color:white;
+  margin-bottom: 20px;
+  margin-left: 30px;
+}
+.footer-col ul li a {
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover {
+  color: white;
+  padding-left: 8px;
+}
+#navbar {
+  background-color: #204c28;
+}
+#navbar ul li a {
+  color:white;
+}
+
+.container-fluid ul li a{
+  font-size: 18px;
+  text-decoration: none;
+  
+}
+
+@media(max-width: 767px){
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+@media(max-width: 574px){
+  .footer-col {
+    width: 100%;
+  }
+}
+
+.title{
+  color: #204c28;
+  text-align: center;
+}
+.col-sm-2 {
+  color: #204c28;
+
+}
+
+#logo{
+width: 10rem;
+background-color: #ddc8bb;
+
+}
+#logo-background{
+  background-color: #ddc8bb;
+  
+  }
+
+#options-nav{
+  background-color:  #204c28;
+}
+
 
 .home {
   background-color: #c0c7b1;
@@ -99,3 +183,4 @@ h1 {
   display: flex;
   flex-direction: row;
 }
+
