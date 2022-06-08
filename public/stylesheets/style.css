@@ -2,11 +2,16 @@ body {
 
   padding: 0;
 
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  
   background-image: url("");
   background-size: cover;
   background-attachment: fixed;
 }
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
 .card .cardImg {
   width: 200px;
   height: 200px;
