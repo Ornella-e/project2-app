@@ -72,6 +72,11 @@ h1 {
   align-items: center;
 }
 
+.about a:link, .about a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 .aboutUl {
   list-style-type: none;
 }
@@ -82,4 +87,15 @@ h1 {
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.line {
+  width: 60%;
+  border-bottom: solid 1px;
+  border-color: white;
+}
+
+.picsDiv {
+  display: flex;
+  flex-direction: row;
 }
