@@ -249,11 +249,11 @@ const data = [
     description: "Used mirror with some chips to repair. Wood is one inch thick. Two strap style hangers on the back for secure and safe hanging."
 }
 ];
-
+const jsonData = require('./products.json')
 const dataSeed = async () => {
 try {
     await Product.deleteMany();
-    const createProducts = await Product.create(data);
+    const createProducts = await Product.create(jsonData);
     console.log(`products created:${createProducts.length}`);
     await mongoose.connection.close();
 }catch(error){

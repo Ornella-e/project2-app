@@ -1,0 +1,409 @@
+[{
+  "name": "Keyboard Hohner",
+  "imageUrl": "/images/Book2.png",
+  "location": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "condition": "Used",
+  "category": "Books and Music",
+  "description": "Hello! I give for free my old piano. \n    I have had this piano for 30 years and it works perfectly. \n    An amplifier and speakers are not integrated. \n    Feel free to contact me. Best regards, John.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Harry Potter and the Philosopher's Stone",
+  "imageUrl": "/images/Book1.png",
+  "location": {
+    "city": "Cologne",
+    "country": "Germany"
+  },
+  "condition": "Used",
+  "category": "Books and Music",
+  "description": "Hi there!! I'm giving this beautiful book for free. \n    I really enjoyed reading this book and I hope you will enjoy it too!\n    Please don't hesitate to contact me if you are interested.\n    Regards, Tom.",
+  "questions": [
+    {
+      "_id": "6298fe6f08ccc8cb8449aa6d"
+    },
+    {
+      "_id": "629903bf90a1a7e4701706b8"
+    },
+    {
+      "_id": "62990418f7b13ebae924d2a2"
+    },
+    {
+      "_id": "6299047e5699b770d9838ae2"
+    },
+    {
+      "_id": "629904a631faecc1d5bd0716"
+    },
+    {
+      "_id": "629905017e2a3fc156bc47ba"
+    },
+    {
+      "_id": "6299053eb22bae7bf72e1e19"
+    },
+    {
+      "_id": "629a74090491a79a429be47e"
+    },
+    {
+      "_id": "629a7ed9e1b364da6265231b"
+    },
+    {
+      "_id": "629a7eebe1b364da62652322"
+    },
+    {
+      "_id": "629a7f91c19070cd2e865205"
+    }
+  ],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  },
+  "dateListed": 
+    
+      "1654289417990"
+    
+  ,
+  "comments": [
+    {
+      "_id": "629a81156c36a023ac5f1874"
+    },
+    {
+      "_id": "629a82b12259884994c98d25"
+    },
+    {
+      "_id": "629a83e52259884994c98d39"
+    },
+    {
+      "_id": "629a8494a5cf4a082ceb3961"
+    },
+    {
+      "_id": "629a84d794be8e63642d99f4"
+    },
+    {
+      "_id": "629a84e850dcdf1917bf1e94"
+    },
+    {
+      "_id": "629a84ef50dcdf1917bf1e9c"
+    },
+    {
+      "_id": "629a853e5e6597641e247fe3"
+    },
+    {
+      "_id": "629a85455e6597641e247feb"
+    },
+    {
+      "_id": "629a8572e01ca3e01912b0a6"
+    }
+  ],
+  "requests": [
+    {
+      "_id": "629b3064231687a9a29a2fa2"
+    },
+    {
+      "_id": "629b30ac231687a9a29a2faa"
+    },
+    {
+      "_id": "629b4ced1abe96ebf62b11ff"
+    },
+    {
+      "_id": "629cc9a65d76fa805d71e32c"
+    }
+  ]
+},{
+  "name": "Trompete from FMB",
+  "imageUrl": "/images/Trompete.png",
+  "location": {
+    "city": "Madrid",
+    "country": "Spain"
+  },
+  "condition": "Used",
+  "category": "Books and Music",
+  "description": "FMB Bb Trompete Ztr 2000. Wind instrument.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Novels by John Irving",
+  "imageUrl": "/images/Book3.png",
+  "location": {
+    "city": "London",
+    "country": "England"
+  },
+  "condition": "Used",
+  "category": "Books and Music",
+  "description": "7 books in good condition \n    (one is even new and unread), \n    all by John Irving:\n    Trying to Save Piggy Sneed\n    The imaginary girlfriend\n    A prayer for Owen Meany\n    The water-method man\n    Setting free the bears\n    The Hotel New Hampshire\n    Last night in Twisted River.\n    I will gladly answer questions.\n    Regards, Martha.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "PONS English Leader's dictionary",
+  "imageUrl": "/images/Book2.png",
+  "location": {
+    "city": "Lisbon",
+    "country": "Portugal"
+  },
+  "condition": "New",
+  "category": "Books and Music",
+  "description": "Hi everyone! I got this dictionary for my trip to London. \n    It is almost new. Contact me if you are interested. Bye! Maria.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Sunglasses Rayban",
+  "imageUrl": "/images/Sunglasses.png",
+  "location": {
+    "city": "Barcelona",
+    "country": "Spain"
+  },
+  "condition": "New",
+  "category": "Clothes",
+  "description": "Rarely used. Best regards, Amalia.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "UGG Shoes",
+  "imageUrl": "/images/Shoes.png",
+  "location": {
+    "city": "Milano",
+    "country": "Italy"
+  },
+  "condition": "New",
+  "category": "Clothes",
+  "description": "Never worn UGG women's shoes with fabric lining.Regards, Anna.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Handbag Eternal ",
+  "imageUrl": "/images/handbag.png",
+  "location": {
+    "city": "Paris",
+    "country": "France"
+  },
+  "condition": "New",
+  "category": "Clothes",
+  "description": "I give for free this ladies handbag in dark blue \n    with a large outer compartment with zipper.\n    It also inludes an extra long shoulder strap.\n    Dimension: With 30cm / Height 22cm.\n    This bag is new and has not been used.\n    Regards, Eloise.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Superdry Vest",
+  "imageUrl": "/images/Vest.png",
+  "location": {
+    "city": "Rome",
+    "country": "Italy"
+  },
+  "condition": "Used",
+  "category": "Clothes",
+  "description": "I'm giving my Superdry Vest for free.\n    It is a size S but also fits a M.\n    Best regards, Giulia. ",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "German Dress",
+  "imageUrl": "/images/Dress.png",
+  "location": {
+    "city": "Munich",
+    "country": "Germany"
+  },
+  "condition": "Used",
+  "category": "Clothes",
+  "description": "Typical dress for traditional German parties. ",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Disney vhs collection",
+  "imageUrl": "/images/disney-collection.jpg",
+  "location": {
+    "city": "London",
+    "country": "UK"
+  },
+  "condition": "Used",
+  "category": "Electronics",
+  "description": "Great collection of Disney bus including special edition of lion king.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Vintage Polaroid Camera",
+  "imageUrl": "/images/camera.jpg",
+  "location": {
+    "city": "Bloomdale",
+    "country": "United States"
+  },
+  "condition": "Used",
+  "category": "Electronics",
+  "description": "Vintage Polaroid SX-70 One Step White Rainbow Stripe Instant Land Camera. Pre-owned, outward appearance looks in Excellent Condition. Please NOTE: *Untested*. Please feel free to message me about additional details",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Coffee Maker",
+  "imageUrl": "/images/coffee.jpg",
+  "location": {
+    "city": "Berlin",
+    "country": "Germany"
+  },
+  "condition": "Used",
+  "category": "Electronics",
+  "description": "Russell Hobbs 21991-56 Coffee Maker Digital Timer Black Floral Filter.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Stereo Hedphones",
+  "imageUrl": "/images/headphones.jpg",
+  "location": {
+    "city": "Tokio",
+    "country": "Japan"
+  },
+  "condition": "Used",
+  "category": "Electronics",
+  "description": "Used condition but in good shape for its age.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Very Old Boombox",
+  "imageUrl": "/images/boombox.jpg",
+  "location": {
+    "city": "Guadalajara",
+    "country": "Mexico"
+  },
+  "condition": "Used",
+  "category": "Electronics",
+  "description": "Really old stereo boombox. Needs fixing.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Blue Velvet Wingback Chair",
+  "imageUrl": "/images/chair.jpg",
+  "location": {
+    "city": "Copenhagen",
+    "country": "Denmark"
+  },
+  "condition": "Used",
+  "category": "Furniture",
+  "description": "Blue velvet wingback armchair with natural stain on pecan wood. No makers mark that I could find, this chair has been in my family for a couple generations. Upholstered in the last couple of years, light pilling on the arms (from a cat).CONDITION NOTES: Light pilling on the top of the 'wings'. Minor scuffs around legs consistent with age.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Sofa",
+  "imageUrl": "/images/sofa.jpg",
+  "location": {
+    "city": "Madrid",
+    "country": "Spain"
+  },
+  "condition": "Used",
+  "category": "Furniture",
+  "description": "Very good condition for a piece of its age. Used occasionally over the years as a spare bed for guests.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Bar Stools",
+  "imageUrl": "/images/bar-stools.jpg",
+  "location": {
+    "city": "Dublin",
+    "country": "Ireland"
+  },
+  "condition": "Used",
+  "category": "Furniture",
+  "description": "Lovely pair of bar stools.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Wood Dresser",
+  "imageUrl": "/images/dresser.jpg",
+  "location": {
+    "city": "Brisbane",
+    "country": "Australia"
+  },
+  "condition": "Used",
+  "category": "Furniture",
+  "description": "In good condition. Smoke free home.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Wall Mirror",
+  "imageUrl": "/images/mirror.jpg",
+  "location": {
+    "city": "Vancouver",
+    "country": "Canada"
+  },
+  "condition": "Used",
+  "category": "Furniture",
+  "description": "Used mirror with some chips to repair. Wood is one inch thick. Two strap style hangers on the back for secure and safe hanging.",
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Lamp",
+  "location": {
+    "city": "Madrid",
+    "country": "Spain"
+  },
+  "condition": "New",
+  "description": "",
+  "dateListed": null,
+  "questions": [],
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  }
+},{
+  "name": "Lamp",
+  "owner": {
+    "_id": "6296506b94cddd000901c76b"
+  },
+  "location": {
+    "city": "Köln",
+    "country": "Germany"
+  },
+  "description": "Hi",
+  "dateListed":  "1653955200000"
+,
+  "questions": []
+},{
+  "name": "Lamp",
+  "owner": {
+    "_id": "6291f9885d931e725381ba0d"
+  },
+  "location": {
+    "city": "Köln",
+    "country": "Germany"
+  },
+  "description": "",
+  "dateListed":  "1654284546759"
+  ,
+  "questions": [
+    {
+      "_id": "629a6198c8be30faec85ec69"
+    }
+  ]
+}]
