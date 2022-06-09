@@ -154,10 +154,10 @@ router.post("/:id/delete", isOwner, async (req, res, next)=>{
 
 router.get("/search", async (req, res) => {
 	const { q } = req.query;
-    console.log(q)
+    
 	try {
 		const searchResults = await Product.find({name:{$regex: q, $options: 'i'}});
-		console.log('search results:', searchResults);
+		
 		res.render("product/searchResults", { searchResults });
 	} catch (e) {
 		console.error(e);
@@ -169,10 +169,10 @@ router.get("/:id/request", isLoggedIn, async (req, res, next) => {
         const {id} = req.params;
 
         const product = await Product.findById(id).populate({path:'requests', populate:{path:'buyer seller', model:'User', select:'username'}});
-        console.log(product);
-        console.log(req.session.currentUser, product.owner, product._id)
+        
+        
        const requestedProd = await Request.find({buyer:req.session.currentUser._id, seller:product.owner, product:product._id}).populate({path:'buyer seller', model:'User', select:'username'});;
-       console.log("this is teh request", requestedProd)
+       
         res.render ("request/request", {product, requestedProd});
     }catch (error){
         next (error);
@@ -193,7 +193,7 @@ router.post ("/:id/request", isLoggedIn, async (req, res, next)=>{
        product.requests.push(newRequest);
        const updatedProduct = await product.save();
        const requestProd = await Product.findById(id).populate({path:'requests', populate:{path:'buyer seller', model:'User', select:'username'}});
-       console.log(requestProd);
+       
         res.render("request/request", {product: requestProd});
     }catch(error){
         next (error);
@@ -204,7 +204,7 @@ router.get("/:id/request/edit", isOwner, async (req, res, next) => {
     try {
         const {id} = req.params;
         const product = await Product.findById(id).populate({path:'requests', populate:{path:'user', model:'User', select:'username'}});
-        console.log("here");
+        
         res.render("request/request-edit", product);
     }catch (error){
     next(error);
@@ -235,7 +235,7 @@ router.get("/:id", async (req, res, next) => {
         const {id} = req.params;
 
         const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
-        console.log('owner:', product.owner.username);
+        
        
         res.render ("product/product-details", {product});
 
