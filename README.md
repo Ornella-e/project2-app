@@ -1,13 +1,28 @@
-FREEBIE
 
-DESCRIPTION: 
+# FREEBIE #2
+
+## DESCRIPTION: 
 
 Freebie is an application that conects users looking for free products and users posting products for free. 
 Our motto is "One man's trash is another man's treasure".
 In the application you will find all kind of articles, which can be a book, a lamp or anything else. The app is available throughout Europe.
 It is mandatory to create an account in order to use the post, question and request options. 
 
-MVP
+## MVP:
+. User can : 
+            - create an account 
+            - create a profile and edit it
+            - publish products for free
+            - edit or delect the products
+            - make questions
+            - request products
+
+
+## BACKLOG:
+. Location map
+. Favourites
+
+## APP STRUCTURE:
 
 1) Models:
        1) Product model
@@ -57,6 +72,8 @@ MVP
           2) style.css
 
 Databank: MongoDB
+
+## LINKS:
 
 TRELLO LINK : https://trello.com/b/T7k5NR2Z/project-2
 
