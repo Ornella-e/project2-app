@@ -1,9 +1,8 @@
-<div class="card text-center" style="width: 16rem;" id="card">
-  <img src="{{imageUrl}}" class="img-fluid card-img-top cardImg" alt="{{name}}">
-  <div class="card-body p-1">
-    <h5 class="card-title">{{name}}</h5>
-  </div>
-  <div class="location">
+<div class="card text-center p-4" style="width: 16rem; height: 25rem;" id="card">
+  <img src="{{imageUrl}}" class="img-fluid card-img-top cardImg h-50" alt="{{name}}">
+  <div class="card-body h-auto">
+    <h5 class="card-title fs-6"><b>{{name}}</b></h5>
+    <div class="location pt-1">
    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="loc">
   <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - 
   https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -13,6 +12,6 @@
     256 192 256z"/></svg>
   <p>{{location.city}}, {{location.country}}</p> 
   </div>
-  
+  </div>
   <a href="/product/{{_id}}" class="btn btn-outline-success">Check more details!</a>
 </div>
