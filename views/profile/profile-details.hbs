@@ -34,6 +34,7 @@
     </div>
 
     <h2 class="title p-2">My ads</h2>
+    {{#if myAds}}
     <div class="container">
         <div class="row">
             {{#each myAds}}
@@ -41,4 +42,7 @@
             {{/each}}
         </div>
     </div>
+    {{else}}
+    <p>You haven't post any ads yet.</p>
+    {{/if}}
 </div>
