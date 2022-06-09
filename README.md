@@ -1,5 +1,5 @@
 
-# FREEBIE #2
+# FREEBIE 
 
 ## DESCRIPTION: 
 
@@ -13,7 +13,7 @@ User can:
 - create an account 
 - create a profile and edit it
 - publish products for free
-- edit or delect the products
+- edit or delete the products
 - make questions
 - request products
 
@@ -36,7 +36,9 @@ User can:
 - index routes
 - product routes
 - profile routes
+
  Seed
+ 
  Views:
 1) auth: 
  - logout
