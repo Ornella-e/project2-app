@@ -46,7 +46,7 @@ User can:
 - footer
 - navbar
 - product card
- 3) product
+ 3) product:
 - books and music
 - clothes
 - electronics
@@ -56,10 +56,10 @@ User can:
 - product edit
 - product publish
 - search results
-4) profile 
+4) profile: 
 - profile details
 - profile edit
-5) request
+5) request:
 - request edit
 - request
 6) about
