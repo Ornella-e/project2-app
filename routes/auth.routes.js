@@ -84,7 +84,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
         const objectUser = foundUser.toObject();
         delete objectUser.password;
         req.session.currentUser = objectUser;
-        console.log(req.session.currentUser)
+     
         res.redirect("/");
       }
     } catch (e) {
