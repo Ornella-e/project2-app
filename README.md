@@ -82,6 +82,8 @@ Databank: MongoDB
 
 - HEROKU LINK : https://freebie-a.herokuapp.com/
 
+- PRESENTATION SLIDES : https://prezi.com/p/tkvrz_3dhizc/project-2/?present=1
+
 
 
 
