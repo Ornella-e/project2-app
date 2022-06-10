@@ -243,7 +243,7 @@ router.get("/:id", async (req, res, next) => {
         next (error);
     }
 })
-router.post ("/:id", async (req, res, next)=>{
+router.post ("/:id", isLoggedIn, async (req, res, next)=>{
    
     try{
         const {id} = req.params;

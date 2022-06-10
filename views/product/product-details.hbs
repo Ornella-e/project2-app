@@ -18,13 +18,14 @@
           <p>{{product.location.city}}, {{product.location.country}}</p>
         </div>
         <div class="d-flex justify-content-end p-3 mt-3 prodLinks">
-          <button class="btn btn-success m-2"><a href="/">Home</a></button>
+          {{#if isLoggedIn}}
           {{#ifEquals owner._id user._id}}
           <button class="btn btn-success m-2"><a href="/product/{{product._id}}/edit">Edit</a></button>
           <form action="/product/{{product._id}}/delete" method="post">
             <button type="submit" class="btn btn-danger m-2">Delete</button>
           </form>
           {{/ifEquals}}
+          {{/if}}
           <button class="btn btn-success m-2"><a href="/product/{{product._id}}/request">Request this
               product</a></button>
         </div>
