@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const Product = require('../models/Product.model')
-/* GET home page */
+
 router.get("/", async(req, res, next) => {
   try{
     const products = await Product.find();

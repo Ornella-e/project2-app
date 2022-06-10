@@ -9,7 +9,6 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const isOwner = require('../middlewares/isOwner');
 
 
-
 router.get("/", async (req, res, next) => {
     try{
         const products = await Product.find();
@@ -233,12 +232,8 @@ router.post ("/:id/request/edit", isOwner, async (req, res, next)=>{
 router.get("/:id", async (req, res, next) => {
     try{
         const {id} = req.params;
-
         const product = await Product.findById(id).populate({path:'questions', populate:{path:'user', model:'User', select:'username'}});
-        
-       
         res.render ("product/product-details", {product});
-
     }catch (error){
         next (error);
     }
@@ -262,7 +257,5 @@ router.post ("/:id", isLoggedIn, async (req, res, next)=>{
         next (error);
     }
 });
-
-
 
 module.exports = router;

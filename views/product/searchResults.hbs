@@ -3,11 +3,9 @@
     <div class="container">
         <div class="row">
             {{#if searchResults}}
-
             {{#each searchResults}}
             {{> productCard this}}
             {{/each}}
-
             {{else}}
             <p>No search results</p>
             {{/if}}

@@ -1,16 +1,16 @@
-  <div  class="container-fluid d-flex justify-content-center pt-2 pb-2" id="logo-background">
-  <img class ="img-fluid" id="logo" src="/images/logo5-peachBl.png" alt="logo">
-  </div>
+<div class="container-fluid d-flex justify-content-center pt-2 pb-2" id="logo-background">
+  <img class="img-fluid" id="logo" src="/images/logo5-peachBl.png" alt="logo">
+</div>
 <nav class="navbar sticky-top navbar-expand-lg bg-light p-0 m-0">
   <div class="container-fluid" id="navbar">
-     <a class="navbar-brand homeLink" href="/">HOME</a>
+    <a class="navbar-brand homeLink" href="/">HOME</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-    
+
         {{#if isLoggedIn}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -42,11 +42,11 @@
             Categories
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown" id="options-nav">
-            <li><a class="dropdown-item"  href="/product/booksAndMusic">Books and music</a></li>
-            <li><a class="dropdown-item"  href="/product/clothes">Clothes</a></li>
-            <li><a class="dropdown-item"  href="/product/electronics">Electronics</a></li>
-            <li><a class="dropdown-item"  href="/product/furniture">Furniture</a></li>
-            <li><a class="dropdown-item"  href="/product/miscellaneous">Miscellaneous</a></li>
+            <li><a class="dropdown-item" href="/product/booksAndMusic">Books and music</a></li>
+            <li><a class="dropdown-item" href="/product/clothes">Clothes</a></li>
+            <li><a class="dropdown-item" href="/product/electronics">Electronics</a></li>
+            <li><a class="dropdown-item" href="/product/furniture">Furniture</a></li>
+            <li><a class="dropdown-item" href="/product/miscellaneous">Miscellaneous</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -54,7 +54,7 @@
         </li>
       </ul>
       <form action="/product/search" method="get" class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" >
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
         <button class="btn btn-success" type="submit">Search</button>
       </form>
     </div>

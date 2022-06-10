@@ -2,16 +2,12 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h1>Edit Request</h1>
-
             <hr>
-
             <form action="/product/{{product._id}}/request/edit" method="POST">
-
                 <div class="mb-3">
                     <label for="request" class="form-label">Name</label>
                     <input type="text" class="form-control" id="request" name="request" value="{{request}}">
                 </div>
-
                 <button type="submit" class="btn btn-dark">Edit your request!</button>
                 <a href="/product/{{_id}}/request" class="btn btn-dark">Product request chat</a>
             </form>

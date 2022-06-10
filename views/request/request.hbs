@@ -1,25 +1,10 @@
-<div class="forms">
-<div class="col-4" >
-  <form action="/product/{{product._id}}/request" method="post">
-    <label for="request" class="form-label mt-5" >Request
-      {{this.product.name}}!</label>
-    <input type="text" class="form-control" id="request" name="request" />
-    <button type="submit" class="btn btn-danger"id="button-form">Send a message</button>
-  </form>
-  {{requestedProd.buyer}}
-  <p>{{requestedProd.buyer.username}}:</p>
-  <p>{{requestedProd.seller.username}}:</p>
-  {{#each requestedProd.request}}
-
-  {{/each}}
-
-  {{#ifEquals owner._id user._id}}
-    <button class="btn btn-dark" ><a
-        href="/product/{{product._id}}/request/edit"
-      >Edit</a></button>
-    <form action="/product/{{product._id}}/request/delete" method="post">
-      <button type="submit" class="btn btn-danger mb-5" >Delete</button>
+<div class="forms p-5">
+  <div class="col-4">
+    <form action="/product/{{product._id}}/request" method="post">
+      <label for="request" class="form-label mt-5">Request
+        <b>{{this.product.name}}</b>!</label>
+      <input type="text" class="form-control" id="request" name="request" />
+      <button type="submit" class="btn btn-danger" id="button-form">Send a message</button>
     </form>
-  {{/ifEquals}}
-</div>
+  </div>
 </div>

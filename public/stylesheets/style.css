@@ -1,11 +1,5 @@
 body {
-
   padding: 0;
-
-  
-  background-image: url("");
-  background-size: cover;
-  background-attachment: fixed;
 }
 
 * {
@@ -27,17 +21,18 @@ body {
 }
 
 .footer-row {
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
 }
+
 ul {
   list-style: none;
 }
+
 .page-footer {
   padding: 70px 0;
-  background-color:#204c28 ;
+  background-color: #204c28;
 }
-
 
 .footer-col {
   width: 25%;
@@ -47,10 +42,11 @@ ul {
 
 .footer-col h4 {
   font-size: 16px;
-  color:white;
+  color: white;
   margin-bottom: 20px;
   margin-left: 30px;
 }
+
 .footer-col ul li a {
   font-size: 13px;
   text-decoration: none;
@@ -58,59 +54,61 @@ ul {
   display: block;
   transition: all 0.3s ease;
 }
+
 .footer-col ul li a:hover {
   color: white;
   padding-left: 8px;
 }
+
 #navbar {
   background-color: #204c28;
   padding: 3px;
 }
-#navbar ul li a, #navbar a {
-  color:white;
+
+#navbar ul li a,
+#navbar a {
+  color: white;
 }
 
-.container-fluid ul li a{
+.container-fluid ul li a {
   font-size: 18px;
   text-decoration: none;
-  
 }
 
-@media(max-width: 767px){
+@media(max-width: 767px) {
   .footer-col {
     width: 50%;
     margin-bottom: 30px;
   }
 }
-@media(max-width: 574px){
+
+@media(max-width: 574px) {
   .footer-col {
     width: 100%;
   }
 }
 
-.title{
+.title {
   color: #204c28;
   text-align: center;
 }
+
 .col-sm-2 {
   color: #204c28;
-
 }
 
-#logo{
-width: 7rem;
-background-color: #ddc8bb;
-
-}
-#logo-background{
+#logo {
+  width: 7rem;
   background-color: #ddc8bb;
-  
-  }
-
-#options-nav{
-  background-color:  #204c28;
 }
 
+#logo-background {
+  background-color: #ddc8bb;
+}
+
+#options-nav {
+  background-color: #204c28;
+}
 
 .home {
   background-color: #c0c7b1;
@@ -157,7 +155,7 @@ background-color: #ddc8bb;
 }
 
 .about {
-  background-color: #204c28 ;
+  background-color: #204c28;
   color: white;
   text-align: center;
   display: flex;
@@ -166,7 +164,7 @@ background-color: #ddc8bb;
   align-items: center;
 }
 
-.about a:link, 
+.about a:link,
 .about a:visited,
 .prodLinks a:link,
 .prodLinks a:visited {
@@ -196,6 +194,7 @@ background-color: #ddc8bb;
   display: flex;
   flex-direction: row;
 }
+
 .question {
   background-color: white;
   border-radius: 20px;
@@ -208,12 +207,11 @@ background-color: #ddc8bb;
 }
 
 
-#button-form{
+#button-form {
   margin-top: 5%;
   margin-bottom: 20%;
 }
 
-.forms{
-background-color: #c0c7b1;
+.forms {
+  background-color: #c0c7b1;
 }
-

@@ -28,7 +28,7 @@ const productSchema = new Schema(
             type: Date,
             default: Date.now
         },
-        favorites: Number, //?
+        favorites: Number, 
         questions: [{
             type: Schema.Types.ObjectId,
             ref: "Question"

@@ -40,16 +40,12 @@ router.post("/edit", async (req, res, next) => {
 router.get("/", async (req, res, next) => {
     try {
         const id = req.session.currentUser._id;
-        
         const user = await User.findById(id)
-        
         const products = await Product.find().populate({path:'owner', model:'User', select:'username'})
         products.forEach((product) => console.log(product.owner))
-
         const myAds = products.filter((product) => {
             return product.owner._id.valueOf() === id;
         });
-       
         res.render("profile/profile-details", {user, myAds});
     } catch (error) {
         next(error);
