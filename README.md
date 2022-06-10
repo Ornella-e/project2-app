@@ -78,9 +78,9 @@ Databank: MongoDB
 ## LINKS:
 - TRELLO LINK : https://trello.com/b/T7k5NR2Z/project-2
 
-- GITHUB LINK :
+- GITHUB LINK : https://github.com/Ornella-e/project2-app.git
 
-- HEROKU LINK :
+- HEROKU LINK : https://freebie-a.herokuapp.com/
 
 
 
